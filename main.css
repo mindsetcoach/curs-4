@@ -1,25 +1,14 @@
 h1 {
-    color: blue;
+    color: darkgrey;
 }
 
-p.menuContainer {
-    color: green;
-}
-
-p.menuContainer {
-    color: red;
-    background-color: beige;
+p {
+    color: grey;
 }
 
 .menuContainer {
     border: solid;
     color: grey;
-}
-
-.parentTestDiv div {
-    background-color: blue;
-}
-
-.parentTestDiv > div {
-    background-color: black;
+    display: flex;
+    justify-content: space-around;
 }
