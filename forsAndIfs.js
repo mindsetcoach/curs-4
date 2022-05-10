@@ -53,3 +53,27 @@ let n = 34;
 for (let i = 0; i < n; i++) {
     console.log('something');
 }
+
+
+let array1 = [];
+// [3, 6, 9, 12, ... , 33]
+array1[0] = 3;
+array1[1] = 6;
+array1[2] = 9;
+array1[3] = 12;
+// ...
+
+
+let N = prompt('please enter a number');
+let array2 = [];
+// [3, 6, 9, 12, ... , N]
+
+let j = 0;
+for (let i = 3; i <= N; i = i + 3) {
+    array2[j] = i;
+    j++;
+}
+
+// ...
+
+console.log(array2);
