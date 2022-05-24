@@ -5,10 +5,3 @@ h1 {
 p {
     color: grey;
 }
-
-.menuContainer {
-    border: solid;
-    color: grey;
-    display: flex;
-    justify-content: space-around;
-}
