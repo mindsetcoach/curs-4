@@ -8,7 +8,7 @@ axios
     .then(function (response) {
         // handle success
         capsulesData = response.data;
-        targetDiv.innerHTML = JSON.stringify(capsulesData);
+        // targetDiv.innerHTML = JSON.stringify(capsulesData);
     })
     .catch(function (error) {
         // handle error

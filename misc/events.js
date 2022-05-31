@@ -1,5 +1,5 @@
 
-console.log('test'); // 'test' here is a: string , parameter , string literal
+// console.log('test'); // 'test' here is a: string , parameter , string literal
 
 let theButton = document.getElementById('theButton');
 
@@ -12,13 +12,13 @@ let onMouseEnter = function(theEvent) {
     console.log('the user found the button with the mouse');
 };
 
-theButton.addEventListener('click', onMouseClick);
-theButton.addEventListener('mouseenter', onMouseEnter);
+// theButton.addEventListener('click', onMouseClick);
+// theButton.addEventListener('mouseenter', onMouseEnter);
 
 let theInput = document.getElementById('theInput');
-theInput.addEventListener('keydown', function() {
-    console.log('the user found the input and writes with the keyboard');
-});
+// theInput.addEventListener('keydown', function() {
+//     console.log('the user found the input and writes with the keyboard');
+// });
 
 let myObject = {
     number: 4,

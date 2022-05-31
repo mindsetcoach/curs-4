@@ -1,7 +1,15 @@
-h1 {
-    color: darkgrey;
+.header {
+    height: 200px;
+    background-color: lightgreen;
 }
 
-p {
-    color: grey;
+.pageContent.withTiles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contentTile {
+    height: 150px;
+    background-color: lightsalmon;
+    width: 200px;
 }
