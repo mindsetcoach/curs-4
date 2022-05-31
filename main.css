@@ -13,3 +13,14 @@
     background-color: lightsalmon;
     width: 200px;
 }
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 400px;
+    background-color: lightgray;
+}
