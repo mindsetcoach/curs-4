@@ -1,7 +1,8 @@
 let crew = {
     
     data: {
-        allItems: []
+        allItems: [],
+        currentlyOpenedPopupClass: null
     },
 
     render: function() {
@@ -12,6 +13,22 @@ let crew = {
             crew.data.allItems.length +
             ' crew members'
         ;
+    },
+
+    onTileClicked: function(event) {
+
+        let popupClass = event.currentTarget.dataset.popupClass;
+        crew.data.currentlyOpenedPopupClass = popupClass;
+
+        document
+            .querySelector('div.modal.' + popupClass)
+            .style.display = 'block';
+    },
+
+    onClosePopupButtonClicked: function() {
+        document
+            .querySelector('div.modal.' + crew.data.currentlyOpenedPopupClass)
+            .style.display = 'none';
     },
 
     init: function() {
@@ -27,6 +44,18 @@ let crew = {
                 console.log(error);
             })
         ;
+
+        // for all the tiles found in the page, we add a click event
+        let tiles = document.querySelectorAll('.pageContent > .contentTile');
+        for (let i = 0; i < tiles.length; i++) {
+            tiles[i].addEventListener('click', crew.onTileClicked);
+        }
+
+        // for all the close buttons inside the popups, we add a click event
+        let closePopupButtons = document.querySelectorAll('.modal button.btn-close');
+        for (let i = 0; i < closePopupButtons.length; i++) {
+            closePopupButtons[i].addEventListener('click', crew.onClosePopupButtonClicked);
+        }
     }
 };
 

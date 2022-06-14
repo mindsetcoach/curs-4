@@ -10,7 +10,6 @@
         <script defer src="3rd-party/bootstrap.bundle.min.js"></script>
         <script defer src="3rd-party/axios.min.js"></script>
 
-        <script defer src="main.js"></script>
         <script defer src="launches/main.js"></script>
         
         <title>Launches</title>
@@ -33,10 +32,49 @@
             </ul>
         </div>
         <div class="pageContent withTiles">
-            <div class="contentTile">tile</div>
-            <div class="contentTile">tile</div>
-            <div class="contentTile">tile</div>
+            <div class="contentTile" data-popup-class="popupFirst">tile</div>
+            <div class="contentTile" data-popup-class="popupSecond">tile</div>
         </div>
         <div class="popup">popup<button>X</button></div>
+        <!-- we start to write all modals here -->
+        <!-- we start to write all modals here -->
+        <!-- we start to write all modals here -->
+        <div class="popupFirst modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">First</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popupSecond modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Second</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of modals -->
+        <!-- end of modals -->
+        <!-- end of modals -->
     </body>
 </html>
