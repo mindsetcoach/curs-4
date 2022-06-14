@@ -1,17 +1,56 @@
+let index = {
+    
+    data: {
+        allLaunchpadItems: [],
+        companyInfo: null
+    },
 
-let capsulesData = null;
+    renderCompanyInfo: function() {
+        let companyInfo = document.querySelector('.pageContent > .companyInfo');
+        companyInfo.innerHTML =
+            companyInfo.innerHTML +
+            '<br>we get ' +
+            index.data.companyInfo.name +
+            ' as the company name'
+        ;
+    },
 
-let targetDiv = document.querySelector('div.pageContent');
+    renderCompanyMap: function() {
+        let companyMap = document.querySelector('.pageContent > .companyMap');
+        companyMap.innerHTML =
+            companyMap.innerHTML +
+            '<br>we get ' +
+            index.data.allLaunchpadItems.length +
+            ' launch pads'
+        ;
+    },
 
-axios
-    .get('https://api.spacexdata.com/v4/capsules')
-    .then(function (response) {
-        // handle success
-        capsulesData = response.data;
-        // targetDiv.innerHTML = JSON.stringify(capsulesData);
-    })
-    .catch(function (error) {
-        // handle error
-        console.log(error);
-    })
-;
+    init: function() {
+        axios
+            .get('https://api.spacexdata.com/v4/company')
+            .then(function(response) {
+                // success
+                index.data.companyInfo = response.data;
+                index.renderCompanyInfo();
+            })
+            .catch(function(error) {
+                // error
+                console.log(error);
+            })
+        ;
+        axios
+            .get('https://api.spacexdata.com/v4/launchpads')
+            .then(function(response) {
+                // success
+                index.data.allLaunchpadItems = response.data;
+                index.renderCompanyMap();
+            })
+            .catch(function(error) {
+                // error
+                console.log(error);
+            })
+        ;
+    }
+};
+
+index.init();
