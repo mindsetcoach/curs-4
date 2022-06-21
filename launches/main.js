@@ -1,4 +1,4 @@
-let launches = {
+window.launches = {
     
     data: {
         allItems: [],
@@ -21,9 +21,7 @@ let launches = {
         let popupClass = event.currentTarget.dataset.popupClass;
         launches.data.currentlyOpenedPopupClass = popupClass;
 
-        document
-            .querySelector('div.modal.' + popupClass)
-            .style.display = 'block';
+        window.launches.totalLaunches.onTileClicked(popupClass);
     },
 
     onClosePopupButtonClicked: function() {
