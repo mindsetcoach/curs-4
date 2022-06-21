@@ -1,9 +1,9 @@
 
 window.launches.totalLaunches = {
 
-    buildTable: function(allItems) {
+    buildTable: function(allItems, popupClass) {
 
-        let theTBody = document.querySelector('.popupFirst tbody');
+        let theTBody = document.querySelector('.' + popupClass + ' tbody');
 
         for (let i = 0; i < allItems.length; i++) {
             let trItem = document.createElement('tr');
@@ -46,6 +46,6 @@ window.launches.totalLaunches = {
             .querySelector('div.modal.' + popupClass)
             .style.display = 'block';
 
-        window.launches.totalLaunches.buildTable(allItems)
+        window.launches.totalLaunches.buildTable(allItems, popupClass);
     }
 }

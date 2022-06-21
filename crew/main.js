@@ -1,4 +1,4 @@
-let crew = {
+window.crew = {
     
     data: {
         allItems: [],
@@ -20,9 +20,7 @@ let crew = {
         let popupClass = event.currentTarget.dataset.popupClass;
         crew.data.currentlyOpenedPopupClass = popupClass;
 
-        document
-            .querySelector('div.modal.' + popupClass)
-            .style.display = 'block';
+        window.crew.totalCrew.onTileClicked(popupClass);
     },
 
     onClosePopupButtonClicked: function() {
