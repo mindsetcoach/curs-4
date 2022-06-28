@@ -7,13 +7,8 @@ window.launches = {
     },
 
     render: function() {
-        let firstTile = document.querySelector('.pageContent > .contentTile');
-        firstTile.innerHTML =
-            firstTile.innerHTML +
-            '<br>we get ' +
-            launches.data.allItems.length +
-            ' launches'
-        ;
+        let firstTileCount = document.querySelector('.pageContent > .contentTile > div');
+        firstTileCount.innerHTML = launches.data.allItems.length;
     },
 
     onTileClicked: function(event) {

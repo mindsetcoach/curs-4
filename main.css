@@ -25,10 +25,16 @@ body {
 }
 
 .contentTile {
+    padding: 20px;
     height: 150px;
     background-color: lightsalmon;
     width: 200px;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
 }
 
 .popup {

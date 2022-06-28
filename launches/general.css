@@ -1,3 +1,7 @@
 .header {
     background-image: url("../images/spacex-launches-small.jpeg");
 }
+
+.contentTile > div {
+    font-size: 50px;
+}

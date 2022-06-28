@@ -6,13 +6,8 @@ window.crew = {
     },
 
     render: function() {
-        let firstTile = document.querySelector('.pageContent > .contentTile');
-        firstTile.innerHTML =
-            firstTile.innerHTML +
-            '<br>we get ' +
-            crew.data.allItems.length +
-            ' crew members'
-        ;
+        let firstTileCount = document.querySelector('.pageContent > .contentTile > div');
+        firstTileCount.innerHTML = crew.data.allItems.length;
     },
 
     onTileClicked: function(event) {
