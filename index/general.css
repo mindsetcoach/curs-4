@@ -2,12 +2,28 @@
     background-image: url("../images/spacex-home-small.jpeg");
 }
 
-.companyInfo {
-    height: 300px;
-    background-color: lightskyblue;
+.si-companyInfo {
+    margin: 0 0 20px 0;
 }
 
-.companyMap {
+.si-section {
+    padding: 5px;
+    margin: 0 40px 0 0;
+}
+
+.si-sections.si-container {
+    display: flex;
+}
+
+.si-infoTableCell {
+    width: 240px;
+    font-variant: small-caps;
+    /* font-weight: bolder; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.si-companyMap {
     height: 250px;
     background-color: lightcoral;
 }

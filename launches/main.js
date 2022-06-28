@@ -58,4 +58,4 @@ window.launches = {
     }
 };
 
-launches.init();
+window.launches.init();
