@@ -5,8 +5,14 @@ body {
 }
 
 .header {
-    height: 200px;
-    background-color: lightgreen;
+    height: 280px;
+    background-position: center;
+    font-size: 40px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 30px;
+    color: white;
 }
 
 .menu {

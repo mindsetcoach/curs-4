@@ -1,3 +1,7 @@
+.header {
+    background-image: url("../images/spacex-home-small.jpeg");
+}
+
 .companyInfo {
     height: 300px;
     background-color: lightskyblue;
