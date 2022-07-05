@@ -17,11 +17,11 @@ window.index.companyInfo = {
 
         descriptionSection.innerHTML += data.summary;
 
-        statSpanEmployees.innerHTML = data.employees;
+        statSpanEmployees.innerHTML = utils.getNumberAsStringWithComma(data.employees);
         statSpanVehicles.innerHTML = data.vehicles;
         statSpanLaunchSites.innerHTML = data.launch_sites;
         statSpanTestSites.innerHTML = data.test_sites;
-        statSpanValuation.innerHTML = data.valuation;
+        statSpanValuation.innerHTML = utils.getNumberAsStringWithComma(data.valuation);
 
         addressSection.innerHTML += index.companyInfo.concatenateAddressText(data.headquarters);
 
@@ -36,5 +36,6 @@ window.index.companyInfo = {
             headquarters.state
         ;
         return result;
-    },
+    }
+
 };
