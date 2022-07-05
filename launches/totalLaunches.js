@@ -38,6 +38,11 @@ window.launches.totalLaunches = {
         }
     },
 
+    renderTile: function() {
+        let firstTileCount = document.querySelector('.pageContent > .contentTile div.si-cardContent');
+        firstTileCount.innerHTML = 'See all ' + launches.data.allItems.length + ' SpaceX launches...';
+    },
+
     onTileClicked: function(popupClass) {
 
         let allItems = window.launches.data.allItems;

@@ -6,8 +6,7 @@ window.crew = {
     },
 
     render: function() {
-        let firstTileCount = document.querySelector('.pageContent > .contentTile > div');
-        firstTileCount.innerHTML = crew.data.allItems.length;
+        crew.totalCrew.renderTile();
     },
 
     onTileClicked: function(event) {
@@ -15,7 +14,7 @@ window.crew = {
         let popupClass = event.currentTarget.dataset.popupClass;
         crew.data.currentlyOpenedPopupClass = popupClass;
 
-        window.crew.totalCrew.onTileClicked(popupClass);
+        crew.totalCrew.onTileClicked(popupClass);
     },
 
     onClosePopupButtonClicked: function() {

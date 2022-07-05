@@ -30,6 +30,11 @@ window.crew.totalCrew = {
         }
     },
 
+    renderTile: function() {
+        let firstTileCount = document.querySelector('.pageContent > .contentTile div.si-cardContent');
+        firstTileCount.innerHTML = 'See all ' + crew.data.allItems.length + ' crew members...';
+    },
+
     onTileClicked: function(popupClass) {
 
         let allItems = window.crew.data.allItems;

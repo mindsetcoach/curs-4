@@ -7,8 +7,7 @@ window.launches = {
     },
 
     render: function() {
-        let firstTileCount = document.querySelector('.pageContent > .contentTile > div');
-        firstTileCount.innerHTML = launches.data.allItems.length;
+        launches.totalLaunches.renderTile();
     },
 
     onTileClicked: function(event) {
@@ -16,7 +15,7 @@ window.launches = {
         let popupClass = event.currentTarget.dataset.popupClass;
         launches.data.currentlyOpenedPopupClass = popupClass;
 
-        window.launches.totalLaunches.onTileClicked(popupClass);
+        launches.totalLaunches.onTileClicked(popupClass);
     },
 
     onClosePopupButtonClicked: function() {
@@ -53,4 +52,4 @@ window.launches = {
     }
 };
 
-window.launches.init();
+launches.init();

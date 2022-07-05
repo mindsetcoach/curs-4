@@ -24,7 +24,11 @@ body {
     flex-wrap: wrap;
 }
 
-.contentTile {
+.pageContent.withTiles > .contentTile {
+    margin: 10px;
+}
+
+/* .contentTile {
     padding: 20px;
     height: 150px;
     background-color: lightsalmon;
@@ -35,7 +39,7 @@ body {
     align-items: center;
     justify-content: space-around;
     cursor: pointer;
-}
+} */
 
 .popup {
     display: none;
