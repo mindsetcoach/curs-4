@@ -4,12 +4,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="3rd-party/bootstrap.min.css" />
+        <link rel="stylesheet" href="3rd-party/leaflet.css" />
+
         <link rel="stylesheet" href="main.css" />
         <link rel="stylesheet" href="index/general.css" />
         <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 
         <script defer src="3rd-party/bootstrap.bundle.min.js"></script>
         <script defer src="3rd-party/axios.min.js"></script>
+        <script defer src="3rd-party/leaflet.js"></script>
 
         <script defer src="misc/utils.js"></script>
         <script defer src="index/main.js"></script>
@@ -37,10 +40,10 @@
         </div>
         <div class="pageContent">
             <div class="si-companyInfo">
-                <div class="si-description si-section">
-                    <h5>Summary:</h5>
-                </div>
                 <div class="si-sections si-container">
+                    <div class="si-description si-section si-forceSmall">
+                        <h5>Summary:</h5>
+                    </div>
                     <div class="si-stats si-section">
                         <h5>Stats:</h5>
                         <div class="si-employees si-infoTableCell">employees<span></span></div>
@@ -60,7 +63,10 @@
                     </div>
                 </div>
             </div>
-            <div class="si-companyMap">map</div>
+            <div class="si-companyMap">
+                <h5>SpaceX Launchpads:</h5>
+                <div id="companyMap"></div>
+            </div>
         </div>
     </body>
 </html>

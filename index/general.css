@@ -11,6 +11,10 @@
     margin: 0 40px 0 0;
 }
 
+.si-section.si-forceSmall {
+    max-width: 40%;
+}
+
 .si-sections.si-container {
     display: flex;
 }
@@ -23,7 +27,6 @@
     justify-content: space-between;
 }
 
-.si-companyMap {
+#companyMap {
     height: 250px;
-    background-color: lightcoral;
 }
