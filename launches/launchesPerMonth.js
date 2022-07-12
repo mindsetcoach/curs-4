@@ -31,7 +31,7 @@ window.launches.launchesPerMonth = {
         };
 
         let myChart = new Chart(
-            document.querySelector('.si-launchesPerMonth'),
+            document.querySelector('.si-launchesPerMonthChart'),
             config
         );
     },

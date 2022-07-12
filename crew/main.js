@@ -14,7 +14,12 @@ window.crew = {
         let popupClass = event.currentTarget.dataset.popupClass;
         crew.data.currentlyOpenedPopupClass = popupClass;
 
-        crew.totalCrew.onTileClicked(popupClass);
+        if (popupClass === 'si-allCrew') {
+            crew.totalCrew.onTileClicked();
+        }
+        if (popupClass === 'si-crewGallery') {
+            crew.crewGallery.onTileClicked();
+        }
     },
 
     onClosePopupButtonClicked: function() {

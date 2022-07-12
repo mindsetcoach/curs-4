@@ -15,11 +15,14 @@ window.launches = {
         let popupClass = event.currentTarget.dataset.popupClass;
         launches.data.currentlyOpenedPopupClass = popupClass;
 
-        if (popupClass === 'popupFirst') {
+        if (popupClass === 'si-allLaunches') {
             launches.totalLaunches.onTileClicked();
         }
-        if (popupClass === 'popupSecond') {
+        if (popupClass === 'si-launchesPerMonth') {
             launches.launchesPerMonth.onTileClicked();
+        }
+        if (popupClass === 'si-launchesCalendar') {
+            launches.launchesCalendar.onTileClicked();
         }
     },
 

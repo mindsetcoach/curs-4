@@ -12,6 +12,7 @@
 
         <script defer src="crew/main.js"></script>
         <script defer src="crew/totalCrew.js"></script>
+        <script defer src="crew/crewGallery.js"></script>
         
         <title>Crew</title>
     </head>
@@ -33,36 +34,25 @@
         </div>
         <div class="pageContent withTiles">
             <div
-                data-popup-class="popupFirst"
+                data-popup-class="si-allCrew"
                 class="contentTile card"
                 style="width: 18rem;"
             >
                 <div class="card-body">
                     <h5 class="card-title">All crew</h5>
-                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                     <div class="si-cardContent"></div>
                 </div>
             </div>
             <div
-                data-popup-class="popupSecond"
+                data-popup-class="si-crewGallery"
                 class="contentTile card"
                 style="width: 18rem;"
             >
                 <div class="card-body">
-                    <h5 class="card-title">a tile</h5>
-                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                    <div class="si-cardContent"></div>
-                </div>
-            </div>
-            <div
-                data-popup-class="popupThird"
-                class="contentTile card"
-                style="width: 18rem;"
-            >
-                <div class="card-body">
-                    <h5 class="card-title">a tile</h5>
-                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                    <div class="si-cardContent"></div>
+                    <h5 class="card-title">Crew photo gallery</h5>
+                    <div class="si-cardContent">
+                        See high resolution photos for each crew member in a carousel and also see all members in a gallery
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,7 +60,7 @@
         <!-- we start to write all modals here -->
         <!-- we start to write all modals here -->
         <!-- we start to write all modals here -->
-        <div class="popupFirst modal" tabindex="-1">
+        <div class="si-allCrew modal" tabindex="-1">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -94,32 +84,15 @@
                 </div>
             </div>
         </div>
-        <div class="popupSecond modal" tabindex="-1">
+        <div class="si-crewGallery modal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">The 2nd one</h5>
+                        <h5 class="modal-title">Crew photo gallery</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>Modal body text goes here.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="popupThird modal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">The 3rd one</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Modal body text goes here.</p>
+                        TODO
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

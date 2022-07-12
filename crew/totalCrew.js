@@ -1,7 +1,9 @@
 
 window.crew.totalCrew = {
 
-    buildTable: function(allItems, popupClass) {
+    buildTable: function(popupClass) {
+
+        let allItems = window.crew.data.allItems;
 
         let theTBody = document.querySelector('.' + popupClass + ' tbody');
 
@@ -35,14 +37,14 @@ window.crew.totalCrew = {
         firstTileCount.innerHTML = 'See all ' + crew.data.allItems.length + ' crew members...';
     },
 
-    onTileClicked: function(popupClass) {
+    onTileClicked: function() {
 
-        let allItems = window.crew.data.allItems;
+        let popupClass = crew.data.currentlyOpenedPopupClass;
 
         document
             .querySelector('div.modal.' + popupClass)
             .style.display = 'block';
 
-        window.crew.totalCrew.buildTable(allItems, popupClass)
+        window.crew.totalCrew.buildTable(popupClass)
     }
 }

@@ -15,6 +15,7 @@
         <script defer src="launches/main.js"></script>
         <script defer src="launches/totalLaunches.js"></script>
         <script defer src="launches/launchesPerMonth.js"></script>
+        <script defer src="launches/launchesCalendar.js"></script>
         
         <title>Launches</title>
     </head>
@@ -36,7 +37,7 @@
         </div>
         <div class="pageContent withTiles">
             <div
-                data-popup-class="popupFirst"
+                data-popup-class="si-allLaunches"
                 class="contentTile card"
                 style="width: 18rem;"
             >
@@ -46,7 +47,7 @@
                 </div>
             </div>
             <div
-                data-popup-class="popupSecond"
+                data-popup-class="si-launchesPerMonth"
                 class="contentTile card"
                 style="width: 18rem;"
             >
@@ -57,12 +58,24 @@
                     </div>
                 </div>
             </div>
+            <div
+                data-popup-class="si-launchesCalendar"
+                class="contentTile card"
+                style="width: 18rem;"
+            >
+                <div class="card-body">
+                    <h5 class="card-title">Launches calendar</h5>
+                    <div class="si-cardContent">
+                        See all the launches in a calendar view
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="popup">popup<button>X</button></div>
         <!-- we start to write all modals here -->
         <!-- we start to write all modals here -->
         <!-- we start to write all modals here -->
-        <div class="popupFirst modal" tabindex="-1">
+        <div class="si-allLaunches modal" tabindex="-1">
             <div class="modal-dialog modal-lg modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -88,7 +101,7 @@
                 </div>
             </div>
         </div>
-        <div class="popupSecond modal" tabindex="-1">
+        <div class="si-launchesPerMonth modal" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -96,7 +109,20 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <canvas class="si-launchesPerMonth"></canvas>
+                        <canvas class="si-launchesPerMonthChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="si-launchesCalendar modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Launches calendar</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        TODO
                     </div>
                 </div>
             </div>
