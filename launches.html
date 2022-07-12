@@ -10,9 +10,11 @@
         <script defer src="3rd-party/bootstrap.bundle.min.js"></script>
         <script defer src="3rd-party/axios.min.js"></script>
         <script defer src="3rd-party/moment.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
         <script defer src="launches/main.js"></script>
         <script defer src="launches/totalLaunches.js"></script>
+        <script defer src="launches/launchesPerMonth.js"></script>
         
         <title>Launches</title>
     </head>
@@ -49,8 +51,10 @@
                 style="width: 18rem;"
             >
                 <div class="card-body">
-                    <h5 class="card-title">a title</h5>
-                    <div class="si-cardContent"></div>
+                    <h5 class="card-title">Launches per month</h5>
+                    <div class="si-cardContent">
+                        Show the number of launches for the calendar months
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,18 +89,14 @@
             </div>
         </div>
         <div class="popupSecond modal" tabindex="-1">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Second</h5>
+                        <h5 class="modal-title">Launches per month</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>Modal body text goes here.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <canvas class="si-launchesPerMonth"></canvas>
                     </div>
                 </div>
             </div>

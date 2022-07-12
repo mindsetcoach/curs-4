@@ -15,7 +15,12 @@ window.launches = {
         let popupClass = event.currentTarget.dataset.popupClass;
         launches.data.currentlyOpenedPopupClass = popupClass;
 
-        launches.totalLaunches.onTileClicked(popupClass);
+        if (popupClass === 'popupFirst') {
+            launches.totalLaunches.onTileClicked();
+        }
+        if (popupClass === 'popupSecond') {
+            launches.launchesPerMonth.onTileClicked();
+        }
     },
 
     onClosePopupButtonClicked: function() {

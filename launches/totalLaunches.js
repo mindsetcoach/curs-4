@@ -43,14 +43,15 @@ window.launches.totalLaunches = {
         firstTileCount.innerHTML = 'See all ' + launches.data.allItems.length + ' SpaceX launches...';
     },
 
-    onTileClicked: function(popupClass) {
+    onTileClicked: function() {
 
-        let allItems = window.launches.data.allItems;
+        let allItems = launches.data.allItems;
+        let popupClass = launches.data.currentlyOpenedPopupClass;
 
         document
             .querySelector('div.modal.' + popupClass)
             .style.display = 'block';
 
-        window.launches.totalLaunches.buildTable(allItems, popupClass);
+        launches.totalLaunches.buildTable(allItems, popupClass);
     }
 }
