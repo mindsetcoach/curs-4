@@ -20,7 +20,8 @@ window.crew.crewGallery = {
                     name: items[i].name,
                     agency: items[i].agency,
                     image: items[i].image,
-                    status: items[i].status
+                    status: items[i].status,
+                    id: items[i].id
                 });
             }
             return newCrewItems;
@@ -71,6 +72,12 @@ window.crew.crewGallery = {
             let nameElement = document.createElement('div');
 
             divElement.classList.add('galleryItem');
+            divElement.setAttribute('data-crew-id', items[i].id);
+            divElement.addEventListener('click', function(event) {
+                let theClickedItem = event.currentTarget;
+                let crewId = theClickedItem.dataset.crewId;
+                crew.crewGallery.buildCarousel(crewId);
+            });
             imgElement.setAttribute('src', items[i].image);
             imgElement.classList.add('galleryPhoto');
             nameElement.innerHTML = items[i].name;
@@ -82,7 +89,21 @@ window.crew.crewGallery = {
         }
     },
 
-    buildCarousel: function() {
+    buildCarousel: function(id) {
+
+        // first, we need to hide the gallery and show the carousel
+        let galleryModal = document.querySelector('.si-crewGallery.modal');
+        let carouselModal = document.querySelector('.si-crewCarousel.modal');
+
+        galleryModal.style.display = 'none';
+        carouselModal.style.display = 'block';
+
+        // we make sure we add the click event for the carousel button
+        let backToGalleryButton = document.querySelector('.si-crewCarousel.modal .si-back-to-gallery');
+        backToGalleryButton.addEventListener('click', function() {
+            carouselModal.style.display = 'none';
+            galleryModal.style.display = 'block';
+        });
 
         let allItems = crew.data.allItems;
     },
