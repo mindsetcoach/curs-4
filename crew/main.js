@@ -2,7 +2,8 @@ window.crew = {
     
     data: {
         allItems: [],
-        currentlyOpenedPopupClass: null
+        currentlyOpenedPopupClass: null,
+        isGalerySorted: false
     },
 
     render: function() {

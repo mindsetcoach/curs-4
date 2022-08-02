@@ -49,6 +49,8 @@ window.crew.crewGallery = {
             // also hide the current button and show the other one
             sortByNameButton.style.display = 'none';
             leaveUnsortedButton.style.display = 'block';
+
+            crew.data.isGalerySorted = true;
         });
         leaveUnsortedButton.addEventListener('click', function() {
             // call again the fillGalleryContent() function, with the original, unsorted, data
@@ -56,9 +58,17 @@ window.crew.crewGallery = {
             // also hide the current button and show the other one
             leaveUnsortedButton.style.display = 'none';
             sortByNameButton.style.display = 'block';
+
+            crew.data.isGalerySorted = false;
         });
 
-        crew.crewGallery.fillGalleryContent(itemsParent, allItems);
+        if (crew.data.isGalerySorted) {
+            let theSortedCrewList =
+                crew.crewGallery.getSortedCrew(allItems);
+            crew.crewGallery.fillGalleryContent(itemsParent, theSortedCrewList);
+        } else {
+            crew.crewGallery.fillGalleryContent(itemsParent, allItems);
+        }
 
     },
 
@@ -91,6 +101,9 @@ window.crew.crewGallery = {
 
     buildCarousel: function(id) {
 
+        // we make sure we modify our application state (crew.data object) with new modal
+        crew.data.currentlyOpenedPopupClass = 'si-crewCarousel';
+
         // first, we need to hide the gallery and show the carousel
         let galleryModal = document.querySelector('.si-crewGallery.modal');
         let carouselModal = document.querySelector('.si-crewCarousel.modal');
@@ -103,6 +116,9 @@ window.crew.crewGallery = {
         backToGalleryButton.addEventListener('click', function() {
             carouselModal.style.display = 'none';
             galleryModal.style.display = 'block';
+
+            // we make sure we modify our application state (crew.data object) with new modal
+            crew.data.currentlyOpenedPopupClass = 'si-crewGallery';
         });
 
         let allItems = crew.data.allItems;
