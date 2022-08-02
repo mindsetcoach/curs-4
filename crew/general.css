@@ -27,3 +27,39 @@ div.si-crewGallery .modal-body {
 .si-button-hidden {
     display: none;
 }
+
+div.si-crewCarousel .si-prev-column,
+div.si-crewCarousel .si-next-column {
+    width: 36px;
+    display: flex;
+    align-items: center;
+}
+
+div.si-crewCarousel .modal-content {
+    height: 100%;
+}
+
+div.si-crewCarousel .modal-body {
+    display: flex;
+}
+
+div.si-crewCarousel .si-carousel-content {
+    width: calc(100% - 72px);
+}
+
+div.si-crewCarousel .si-carousel-image {
+    background-color: black;
+    height: calc(100% - 72px);
+    margin: 5px;
+}
+
+div.si-crewCarousel .si-carousel-image > img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+div.si-crewCarousel .si-crew-member-info > div > b {
+    width: 100px;
+    display: inline-block;
+}

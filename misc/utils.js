@@ -13,6 +13,14 @@ window.utils = {
         }
         let numberAsStringWithCommas = numberAsArrayWithCommas.join('');
         return numberAsStringWithCommas;
+    },
+
+    getSpaceXApiItemById: function(allItems, itemId) {
+        for (let i = 0; i < allItems.length; i++) {
+            if (allItems[i].id === itemId) {
+                return allItems[i];
+            }
+        }
     }
     
 };

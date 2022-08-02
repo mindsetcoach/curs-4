@@ -99,7 +99,7 @@ window.crew.crewGallery = {
         }
     },
 
-    buildCarousel: function(id) {
+    buildCarousel: function(crewMemberId) {
 
         // we make sure we modify our application state (crew.data object) with new modal
         crew.data.currentlyOpenedPopupClass = 'si-crewCarousel';
@@ -122,6 +122,30 @@ window.crew.crewGallery = {
         });
 
         let allItems = crew.data.allItems;
+
+        let crewMember = utils.getSpaceXApiItemById(allItems, crewMemberId);
+
+        crew.crewGallery.fillCarouselContent(crewMember);
+    },
+
+    fillCarouselContent: function(crewMember) {
+        // alert(crewMember.name);
+        let carouselImageParent = document.querySelector('.si-crewCarousel .si-carousel-image');
+        carouselImageParent.innerHTML = '';
+
+        let crewMemberName = document.querySelector('.si-crewCarousel .si-crew-member-name > span');
+        let crewMemberAgency = document.querySelector('.si-crewCarousel .si-crew-member-agency > span');
+        let crewMemberStatus = document.querySelector('.si-crewCarousel .si-crew-member-status > span');
+
+        let carouselImage = document.createElement('img');
+        carouselImage.setAttribute('src', crewMember.image);
+
+        crewMemberName.innerHTML = crewMember.name;
+        crewMemberAgency.innerHTML = crewMember.agency;
+        crewMemberStatus.innerHTML = crewMember.status;
+
+        carouselImageParent.appendChild(carouselImage);
+
     },
 
     renderTile: function() {
