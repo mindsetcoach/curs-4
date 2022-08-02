@@ -101,6 +101,8 @@ window.crew.crewGallery = {
 
     buildCarousel: function(crewMemberId) {
 
+        crew.data.selectedCarouselCrewMemberId = crewMemberId;
+
         // we make sure we modify our application state (crew.data object) with new modal
         crew.data.currentlyOpenedPopupClass = 'si-crewCarousel';
 
@@ -123,8 +125,35 @@ window.crew.crewGallery = {
 
         let allItems = crew.data.allItems;
 
-        let crewMember = utils.getSpaceXApiItemById(allItems, crewMemberId);
+        // we do the same thing as above with the prev and next buttons
+        let prevButton = document.querySelector('.si-crewCarousel.modal .si-prev-button');
+        prevButton.addEventListener('click', function() {
 
+            let newCrewMemberResult = utils.getPrevSpaceXApiItemById(allItems, crew.data.selectedCarouselCrewMemberId);
+            crew.data.selectedCarouselCrewMemberId = newCrewMemberResult.item.id;
+            crew.crewGallery.fillCarouselContent(newCrewMemberResult.item);
+            if (!newCrewMemberResult.isAtEdge) {
+                prevButton.removeAttribute('disabled');
+                nextButton.removeAttribute('disabled');
+            } else {
+                prevButton.setAttribute('disabled', 'true');
+            }
+        });
+        let nextButton = document.querySelector('.si-crewCarousel.modal .si-next-button');
+        nextButton.addEventListener('click', function() {
+
+            let newCrewMemberResult = utils.getNextSpaceXApiItemById(allItems, crew.data.selectedCarouselCrewMemberId);
+            crew.data.selectedCarouselCrewMemberId = newCrewMemberResult.item.id;
+            crew.crewGallery.fillCarouselContent(newCrewMemberResult.item);
+            if (!newCrewMemberResult.isAtEdge) {
+                prevButton.removeAttribute('disabled');
+                nextButton.removeAttribute('disabled');
+            } else {
+                nextButton.setAttribute('disabled', 'true');
+            }
+        });
+
+        let crewMember = utils.getSpaceXApiItemById(allItems, crewMemberId);
         crew.crewGallery.fillCarouselContent(crewMember);
     },
 

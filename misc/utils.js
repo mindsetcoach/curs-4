@@ -21,6 +21,50 @@ window.utils = {
                 return allItems[i];
             }
         }
+    },
+
+    getPrevSpaceXApiItemById: function(allItems, itemId) {
+        for (let i = 0; i < allItems.length; i++) {
+            if (allItems[i].id === itemId && i !== 0) {
+                if (i === 1) {
+                    return {
+                        item: allItems[i - 1],
+                        isAtEdge: true
+                    };
+                } else {
+                    return {
+                        item: allItems[i - 1],
+                        isAtEdge: false
+                    };
+                }
+            }
+        }
+        return {
+            item: null,
+            isAtEdge: false
+        };
+    },
+
+    getNextSpaceXApiItemById: function(allItems, itemId) {
+        for (let i = 0; i < allItems.length; i++) {
+            if (allItems[i].id === itemId && i != allItems.length - 1) {
+                if (i ===  allItems.length - 2) {
+                    return {
+                        item: allItems[i + 1],
+                        isAtEdge: true
+                    };
+                } else {
+                    return {
+                        item: allItems[i + 1],
+                        isAtEdge: false
+                    };
+                }
+            }
+        }
+        return {
+            item: null,
+            isAtEdge: false
+        };
     }
     
 };

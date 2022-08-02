@@ -3,7 +3,8 @@ window.crew = {
     data: {
         allItems: [],
         currentlyOpenedPopupClass: null,
-        isGalerySorted: false
+        isGalerySorted: false,
+        selectedCarouselCrewMemberId: null
     },
 
     render: function() {
