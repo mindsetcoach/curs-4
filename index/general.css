@@ -11,8 +11,22 @@
     margin: 0 40px 0 0;
 }
 
-.si-section.si-forceSmall {
-    max-width: 40%;
+@media only screen and (max-width: 700px) {
+    .si-section.si-forceSmall {
+        max-width: 100%;
+    }
+    .si-sections {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .si-section.si-forceSmall {
+        max-width: 40%;
+    }
+    .si-sections {
+        flex-direction: row;
+    }
 }
 
 .si-sections.si-container {

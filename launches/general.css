@@ -8,6 +8,8 @@
     height: 300px;
     margin: auto;
     display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
 }
 .si-calendarDays {
     height: 25px;
@@ -19,11 +21,30 @@
 }
 
 .si-calendarCore > .si-calendarCell {
-    width: 50px;
-    height: 50px;
-    background-color: salmon;
+    width: 48px;
+    height: 48px;
+    background-color: grey;
     border: 1px solid;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 1px;
+    padding: 5px;
+    font-weight: bolder;
+    color: white;
+    opacity: 0.5;
+    font-size: small;
+    cursor: pointer;
+}
+.si-calendarCore > .si-calendarCell.si-transparent {
+    opacity: 0;
+}
+.si-calendarCore > .si-calendarCell.si-selected {
+    opacity: 1;
+    font-size: larger;
+}
+
+.si-calendarTitle {
+    padding: 0 0 0 20px;
+    color: grey;
 }

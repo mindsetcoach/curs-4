@@ -24,7 +24,47 @@ window.launches.launchesCalendar = {
             selectedMonth.monthOfYear,
             launches.data.allItems
         );
-        console.log(selectedMonthLaunches);
+
+        // we crate a moment object for our selected month
+        let selectedMoment = moment()
+            .year(selectedMonth.year)
+            .month(selectedMonth.monthOfYear - 1)
+            .startOf('month')
+        ;
+
+        let daysInTheMonth = selectedMoment.daysInMonth();
+        let firstMonthDayAsWeekDay = selectedMoment.day();
+        let monthAsString = selectedMoment.format('MMMM');
+
+        let calendarTitle = document.querySelector('.modal.si-launchesCalendar .si-calendarTitle');
+        calendarTitle.innerHTML = monthAsString + ', ' + selectedMonth.year;
+
+        let cellsParent = document.querySelector('.modal.si-launchesCalendar .si-calendarCore');
+        cellsParent.innerHTML = '';
+        for (let i = 0; i < firstMonthDayAsWeekDay; i++) {
+            let cellElement = document.createElement('div');
+            cellElement.classList.add('si-calendarCell');
+            cellElement.classList.add('si-transparent');
+            cellsParent.appendChild(cellElement);
+        }
+        for (let i = 0; i < daysInTheMonth; i++) {
+            let isDayWithLaunch = false;
+            for (let j = 0; j < selectedMonthLaunches.length; j++) {
+                let launchItem = selectedMonthLaunches[j];
+                let itemDateString = launchItem.date_utc.split('T')[0];
+                let itemDay = itemDateString.split('-')[2];
+                if (parseInt(itemDay) === i + 1) {
+                    isDayWithLaunch = true;
+                }
+            }
+            let cellElement = document.createElement('div');
+            cellElement.classList.add('si-calendarCell');
+            if (isDayWithLaunch) {
+                cellElement.classList.add('si-selected');
+            }
+            cellElement.innerHTML = i + 1;
+            cellsParent.appendChild(cellElement);
+        }
     },
 
     onPrevClicked: function() {
