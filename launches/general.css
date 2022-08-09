@@ -2,6 +2,28 @@
     background-image: url("../images/spacex-launches-small.jpeg");
 }
 
-/* .contentTile > div {
-    font-size: 50px;
-} */
+.si-calendarDays,
+.si-calendarCore {
+    width: 350px;
+    height: 300px;
+    margin: auto;
+    display: flex;
+}
+.si-calendarDays {
+    height: 25px;
+}
+.si-calendarDays > div {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.si-calendarCore > .si-calendarCell {
+    width: 50px;
+    height: 50px;
+    background-color: salmon;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
