@@ -3,7 +3,11 @@ window.launches = {
     data: {
         allItems: [],
         nextLaunch: null,
-        currentlyOpenedPopupClass: null
+        currentlyOpenedPopupClass: null,
+        selectedCalendarMonth: {
+            year: null,
+            monthOfYear: null
+        }
     },
 
     render: function() {
